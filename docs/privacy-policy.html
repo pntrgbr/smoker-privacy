@@ -123,10 +123,10 @@
   <main>
     <article>
       <h1>Adatkezelési tájékoztató</h1>
-      <p class="meta">Cookr / Smoker alkalmazás<br>Hatályos: 2026. július 2.</p>
+      <p class="meta">Cookr / SmokeR alkalmazás<br>Hatályos: 2026. augusztus 17.</p>
 
       <p>
-        Ez az adatkezelési tájékoztató leírja, hogyan kezeli a Smoker alkalmazás
+        Ez az adatkezelési tájékoztató leírja, hogyan kezeli a SmokeR alkalmazás
         az alkalmazás használata során megadott és keletkező adatokat.
       </p>
 
@@ -140,7 +140,7 @@
 
       <h2>1. Adatkezelő</h2>
       <p>
-        Adatkezelő: Smoker alkalmazás.<br>
+        Adatkezelő: SmokeR alkalmazás.<br>
         Az alkalmazás fejlesztője: Pintér Gábor.<br>
         Kapcsolat adatvédelmi kérdésekben: <a href="mailto:pintergabor1990@gmail.com">pintergabor1990@gmail.com</a>.
       </p>
@@ -153,8 +153,10 @@
         <li>profiladatok: megjelenített név, felhasználónév, bemutatkozás, avatar URL, specialitás, követési és receptszámláló adatok;</li>
         <li>receptadatok: recept címe, leírása, hozzávalók, mennyiségek, elkészítési lépések, címkék, forráslink, időzítési és adag információk;</li>
         <li>képek: a galériából választott vagy kamerával készített recept- és profilképek helyi másolata vagy hivatkozása;</li>
+        <li>receptimport-adatok: az importálásra megadott nyilvános webcím, az oldal recepthez kapcsolódó szövege és metaadatai, illetve a feltöltött receptképek;</li>
+        <li>vásárlási adatok: a Google Play vagy az App Store által kiadott tranzakcióazonosító, vásárlási token, termékazonosító és a jóváírt receptimport-kreditek;</li>
         <li>alkalmazáson belüli interakciók: kedvelések, könyvjelzők, receptgyűjtemények, piszkozatok és kapcsolódó preferenciák;</li>
-        <li>technikai adatok: bejelentkezési tokenek, helyi gyorsítótár, és a háttérszolgáltató működéséhez szükséges napló- vagy biztonsági adatok.</li>
+        <li>technikai és használati adatok: bejelentkezési tokenek, helyi gyorsítótár, alkalmazáspéldány-azonosító, első megnyitás, munkamenetek, alkalmazásindítások, eszköz- és operációsrendszer-adatok, hozzávetőleges földrajzi hely, valamint a háttérszolgáltatók működéséhez szükséges napló- vagy biztonsági adatok.</li>
       </ul>
 
       <h2>3. Mire használjuk az adatokat?</h2>
@@ -162,8 +164,10 @@
         <li>felhasználói fiók létrehozására és bejelentkeztetésre;</li>
         <li>profilok, receptek, receptpiszkozatok és receptlisták megjelenítésére;</li>
         <li>receptek feltöltésére, keresésére, ajánlására és rendszerezésére;</li>
+        <li>a felhasználó által kért receptimport feldolgozására és az importkreditek elszámolására;</li>
         <li>kedvelések, könyvjelzők és könyvtárak kezelésére;</li>
         <li>az alkalmazás működésének, biztonságának és hibakezelésének támogatására;</li>
+        <li>összesített használati statisztikák készítésére, például az első megnyitások, aktív felhasználók és munkamenetek mérésére;</li>
         <li>felhasználói megkeresések megválaszolására.</li>
       </ul>
 
@@ -176,9 +180,25 @@
 
       <h2>5. Harmadik felek és háttérszolgáltatók</h2>
       <p>
-        A Smoker brandelt változat Supabase szolgáltatást használ hitelesítéshez, adatbázis-műveletekhez és
+        A SmokeR brandelt változat Supabase szolgáltatást használ hitelesítéshez, adatbázis-műveletekhez és
         valós idejű funkciókhoz. Social login használata esetén a választott bejelentkezési szolgáltató
         (Google, Apple vagy Facebook) is kezel adatokat a saját szabályzata szerint.
+      </p>
+      <p>
+        Az alkalmazás a Google Firebase Analytics szolgáltatását használja összesített használati statisztikák
+        készítésére. A méréshez a szolgáltatás alkalmazáspéldány-azonosítót és technikai adatokat kezelhet.
+        A hirdetési azonosító gyűjtése és a személyre szabott hirdetési jelek alapértelmezetten ki vannak kapcsolva.
+      </p>
+      <p>
+        A receptimport során a megadott nyilvános weboldal releváns tartalma vagy a felhasználó által feltöltött
+        képek az OpenAI szolgáltatásába kerülnek továbbításra a recept strukturált feldolgozásához. A képfeltöltések
+        átmeneti tárolását a Cloudflare R2 biztosítja; az ideiglenes importképeket a feldolgozás befejezése után,
+        sikertelen feldolgozás esetén is töröljük.
+      </p>
+      <p>
+        Alkalmazáson belüli vásárláskor a Google Play vagy az Apple App Store kezeli a fizetést. Az alkalmazás
+        backendje a szolgáltatótól kapott tranzakciós adatot kizárólag a vásárlás hitelesítésére, az ismételt
+        jóváírás megakadályozására és az importkreditek vezetésére használja; bankkártyaadatot nem kapunk meg.
       </p>
       <p>
         Az alkalmazás nem értékesíti a személyes adatokat. Adatokat csak akkor osztunk meg harmadik féllel,
@@ -197,7 +217,9 @@
       <p>
         A fiókhoz kapcsolódó adatokat addig kezeljük, amíg a fiók aktív, vagy amíg az adott funkció működéséhez
         szükséges. Helyi gyorsítótár és képek az alkalmazás törlésével, illetve az eszköz vagy alkalmazás
-        tárhelyének törlésével eltávolíthatók. Törlési kérést a kapcsolati email címen lehet küldeni.
+        tárhelyének törlésével eltávolíthatók. Az ideiglenes receptimport-képek a feldolgozás után törlődnek.
+        A vásárlási tranzakcióazonosítókat a jóváírás megismétlésének megakadályozásához és az elszámolás
+        igazolásához szükséges ideig őrizzük meg. Törlési kérést a kapcsolati email címen lehet küldeni.
       </p>
 
       <h2>8. Felhasználói jogok</h2>
